@@ -3,3 +3,58 @@ info.plist:
   uuid: A62E0004-1652-4D7B-851C-45FE02163034
   name:  ㎆ Stylus
 
+Syntaxes/stylus.tmLanguage:
+  uuid: 0FED80AB-EC09-4147-83AF-F8452F78FDE9
+  name:  ㎆ Stylus
+  scopeName: source.stylus.mb
+  fileTypes: [ 'styl', 'stylus' ]
+  keyEquivalent: ^~S
+
+  patterns:
+
+  - name: comment.line.
+    match: (?:^[ ]+)?(//).*$
+    captures:
+      1: { name: punctuation.definition.comment. }
+
+  - name: string.quoted.double.
+    begin: \"
+    end: \"
+
+  - name: string.quoted.single.
+    begin: \'
+    end: \'
+
+  - name: entity.other.attribute-name.id.
+    match: (\#)[a-zA-Z][a-zA-Z0-9_-]*
+    captures:
+      1: { name: punctuation.definition.entity.css }
+
+  - name: constant.numeric.stylus
+    match: '(?:\b(\d+))|(\#[a-fA-F0-9]+)'
+
+  - name: keyword.control.
+    match: "\b(!important|for|in|return|true|false|null|if|else|unless|return)\b"
+
+  - name: meta.function.
+    match: '([-a-zA-Z_][-\w]*)?(\()'
+    captures:
+      1: { name: entity.name.function. }
+
+  - name: entity.other.attribute-name.class.
+    match: "(\.)[a-z]{1}[a-zA-Z0-9_-]*"
+    captures:
+      1: { name: punctuation.definition.entity. }
+
+  - name: entity.name.tag.
+    match: (?<=\s|^)(\*|span|input|textarea|body)(?=,|\s+\{|$)
+
+  # - name: entity.other.attribute-name.pseudo-element.
+  #   match: "(:+)\b(after|before|first-child|first-letter|first-line|selection)\b"
+  #   captures:
+  #     1: { name: punctuation.definition.entity. }
+
+  - name: entity.other.attribute-name.pseudo-class.
+    match: "(:)\b(active|hover|link|visited|focus)\b"
+    captures:
+      1: { name: punctuation.definition.entity. }
