@@ -6,7 +6,7 @@ info.plist:
 Syntaxes/stylus.tmLanguage:
   uuid: 0FED80AB-EC09-4147-83AF-F8452F78FDE9
   name:  ㎆ Stylus
-  scopeName: source.stylus.mb
+  scopeName: source.stylus
   fileTypes: [ 'styl', 'stylus' ]
   keyEquivalent: ^~S
 
@@ -26,15 +26,17 @@ Syntaxes/stylus.tmLanguage:
     end: \'
 
   - name: entity.other.attribute-name.id.
-    match: (\#)[a-zA-Z][a-zA-Z0-9_-]*
+    match: |
+      (?<=^|\s\s|,\s)
+      (\#) [a-zA-Z] [a-zA-Z0-9_-]*
     captures:
-      1: { name: punctuation.definition.entity.css }
+      1: { name: punctuation.definition.entity. }
 
   - name: constant.numeric.stylus
-    match: '(?:\b(\d+))|(\#[a-fA-F0-9]+)'
+    match: '(?:\b(\d+(?:px)?))|(\#[a-fA-F0-9]+)'
 
   - name: keyword.control.
-    match: "\b(!important|for|in|return|true|false|null|if|else|unless|return)\b"
+    match: '\b(for|in|return|true|false|null|if|else|unless)\b'
 
   - name: meta.function.
     match: '([-a-zA-Z_][-\w]*)?(\()'
@@ -47,14 +49,9 @@ Syntaxes/stylus.tmLanguage:
       1: { name: punctuation.definition.entity. }
 
   - name: entity.name.tag.
-    match: (?<=\s|^)(\*|span|input|textarea|body)(?=,|\s+\{|$)
+    match: (?<=\s|^)(\*|div|span|input|textarea|body)(?=,|:|\s+\{|$)
 
-  # - name: entity.other.attribute-name.pseudo-element.
-  #   match: "(:+)\b(after|before|first-child|first-letter|first-line|selection)\b"
-  #   captures:
-  #     1: { name: punctuation.definition.entity. }
-
-  - name: entity.other.attribute-name.pseudo-class.
-    match: "(:)\b(active|hover|link|visited|focus)\b"
+  - name: entity.other.attribute-name.pseudo-selector.
+    match: '(:)[-a-z]+\b'
     captures:
       1: { name: punctuation.definition.entity. }

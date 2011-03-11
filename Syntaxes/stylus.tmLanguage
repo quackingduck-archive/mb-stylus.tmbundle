@@ -19,13 +19,13 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.comment.mb</string>
+					<string>punctuation.definition.comment.stylus</string>
 				</dict>
 			</dict>
 			<key>match</key>
 			<string>(?x)(?:^[ ]+)?(//).*$</string>
 			<key>name</key>
-			<string>comment.line.mb</string>
+			<string>comment.line.stylus</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -33,7 +33,7 @@
 			<key>end</key>
 			<string>(?x)\&quot;</string>
 			<key>name</key>
-			<string>string.quoted.double.mb</string>
+			<string>string.quoted.double.stylus</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -41,7 +41,7 @@
 			<key>end</key>
 			<string>(?x)\'</string>
 			<key>name</key>
-			<string>string.quoted.single.mb</string>
+			<string>string.quoted.single.stylus</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -49,25 +49,27 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.entity.css</string>
+					<string>punctuation.definition.entity.stylus</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(?x)(\#)[a-zA-Z][a-zA-Z0-9_-]*</string>
+			<string>(?x)(?&lt;=^|\s\s|,\s)
+			(\#) [a-zA-Z] [a-zA-Z0-9_-]*
+			</string>
 			<key>name</key>
-			<string>entity.other.attribute-name.id.mb</string>
+			<string>entity.other.attribute-name.id.stylus</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?x)(?:\b(\d+))|(\#[a-fA-F0-9]+)</string>
+			<string>(?x)(?:\b(\d+(?:px)?))|(\#[a-fA-F0-9]+)</string>
 			<key>name</key>
 			<string>constant.numeric.stylus</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?x)(!important|for|in|return|true|false|null|if|else|unless|return)</string>
+			<string>(?x)\b(for|in|return|true|false|null|if|else|unless)\b</string>
 			<key>name</key>
-			<string>keyword.control.mb</string>
+			<string>keyword.control.stylus</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -75,13 +77,13 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.mb</string>
+					<string>entity.name.function.stylus</string>
 				</dict>
 			</dict>
 			<key>match</key>
 			<string>(?x)([-a-zA-Z_][-\w]*)?(\()</string>
 			<key>name</key>
-			<string>meta.function.mb</string>
+			<string>meta.function.stylus</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -89,19 +91,19 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.entity.mb</string>
+					<string>punctuation.definition.entity.stylus</string>
 				</dict>
 			</dict>
 			<key>match</key>
 			<string>(?x)(\.)[a-z]{1}[a-zA-Z0-9_-]*</string>
 			<key>name</key>
-			<string>entity.other.attribute-name.class.mb</string>
+			<string>entity.other.attribute-name.class.stylus</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?x)(?&lt;=\s|^)(\*|span|input|textarea|body)(?=,|\s+\{|$)</string>
+			<string>(?x)(?&lt;=\s|^)(\*|div|span|input|textarea|body)(?=,|:|\s+\{|$)</string>
 			<key>name</key>
-			<string>entity.name.tag.mb</string>
+			<string>entity.name.tag.stylus</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -109,17 +111,17 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.entity.mb</string>
+					<string>punctuation.definition.entity.stylus</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(?x)(:)(active|hover|link|visited|focus)</string>
+			<string>(?x)(:)(active|hover|link|visited|focus)\b</string>
 			<key>name</key>
-			<string>entity.other.attribute-name.pseudo-class.mb</string>
+			<string>entity.other.attribute-name.pseudo-class.stylus</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
-	<string>source.stylus.mb</string>
+	<string>source.stylus</string>
 	<key>uuid</key>
 	<string>0FED80AB-EC09-4147-83AF-F8452F78FDE9</string>
 </dict>
