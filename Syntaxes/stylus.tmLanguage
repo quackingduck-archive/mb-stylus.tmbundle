@@ -95,7 +95,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(?x)(\.)[a-z]{1}[a-zA-Z0-9_-]*</string>
+			<string>(?x)(\.)[a-zA-Z]{1}[a-zA-Z0-9_-]*</string>
 			<key>name</key>
 			<string>entity.other.attribute-name.class.stylus</string>
 		</dict>

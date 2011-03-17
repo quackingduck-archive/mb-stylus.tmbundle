@@ -57,7 +57,7 @@ Syntaxes/stylus.tmLanguage:
       1: { name: entity.name.function. }
 
   - name: entity.other.attribute-name.class.
-    match: "(\.)[a-z]{1}[a-zA-Z0-9_-]*"
+    match: "(\.)[a-zA-Z]{1}[a-zA-Z0-9_-]*"
     captures:
       1: { name: punctuation.definition.entity. }
 
